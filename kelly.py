@@ -1,5 +1,9 @@
 import discord
 from discord.ext import commands
+from discord.ext.commands import Bot
+import asyncio
+
+
 """Author Luuk de Haas and Jesse Akoma"""
 """Bot name Kelly""""
 TOKEN = 'NDkxNTA0NTg4NzQ3NDQwMTI4.DoI1RA.pzurKfgfNlcX94pbspDyzkl2lOU'
@@ -14,9 +18,26 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
+
+
+
 @bot.command(pass_context=True)
 async def ping(ctx):
     await bot.say ("Pong")
+print ("user has pinged.")
+
+@bot.command(pass.pass_context=True)
+async def info(ctx, user, discord.Member):
+await bot.say("The users name is: {}".format(user.name))
+await bot.say("The use ID is:".format(iser.id))
+await bot.say("The users status is:".format(user.status))
+await bot.say("The users highest rank is:".format(user.top_rule))
+await bot.say("The user joined at:".format(user.joined_at))
+
+@bot.command(pass_context=True)
+async def kick(ctx, user: discord_Member):
+await bot.say(":boot: Bye Bye I hope you enjoyed your stay".format(user.name))
+await bot.kick(user)
 
 @bot.command()
 async def hello():
