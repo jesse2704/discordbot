@@ -35,13 +35,13 @@ async def website(ctx):
 async def info(ctx):
     embed = discord.Embed(title="nice bot", description="Nicest bot there is ever.", color=0xeee657)
     
-    # give info about you here
+    #auteur
     embed.add_field(name="Author", value="Luuk de Haas")
     
-    # Shows the number of servers the bot is member of.
+    #welke servers die zit
     embed.add_field(name="Server count", value=f"{len(bot.guilds)}")
     
-    # give users a link to invite thsi bot to their server
+    #portfolio
     embed.add_field(name="Portfolio", value="https://81307.ict-lab.nl/Portfolio")
     
     await ctx.send(embed=embed)
