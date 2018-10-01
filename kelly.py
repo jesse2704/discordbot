@@ -13,6 +13,7 @@ bot = commands.Bot(command_prefix='/', description=description)
 
 @bot.event
 async def on_ready():
+    print('are you ready??')
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
@@ -71,7 +72,17 @@ async def info(ctx):
 async def add(left : int, right : int):
     """Adds two numbers together."""
     await bot.say(left + right)
-    
+
+@bot.command(pass_context = True)
+async def clear(ctx, number):
+    number = int(number) #haald de aantal berichten om te verwijderen.
+    counter = 0
+    async for x in bot.logs_from(ctx.message.channel, limit = number):
+if counter < number:
+    await bot.delete_message(x)
+    counter += 1
+    await asyncio.sleep(1.2) #secondes van de timer die het delete proces kan verwerken
+
 
 
 bot.run(TOKEN)
